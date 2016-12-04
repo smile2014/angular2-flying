@@ -1,0 +1,41 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+					aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">导航切换</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" routerLink="/home">
+				<span class="glyphicon glyphicon-send"></span>
+				Angular2 Flying
+			</a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li routerLinkActive="active">
+					<a routerLink="./editor">UEditor</a>
+				</li>
+				<li routerLinkActive="active">
+					<a routerLink="./chart">HighChart</a>
+				</li>
+				<li routerLinkActive="active">
+					<a routerLink="./bootstrap">Bootstrap</a>
+				</li>
+				<li routerLinkActive="active">
+					<a routerLink="./lazy">模块懒加载</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="/login">退出</a>
+				</li>
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</nav>
+<div class="container home-main" role="main">
+	<router-outlet></router-outlet>
+</div>

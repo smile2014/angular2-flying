@@ -1,0 +1,40 @@
+.login-main {
+	background: url("./assets/images/admin_bg.jpg") repeat;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.login-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	color: #fff;
+	width: 500px;
+	height: 340px;
+	margin-top: -170px;
+	margin-left: -250px;
+	padding: 20px 0;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.login-content h1 {
+	font-size: 24px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.login-content form {
+	margin-left: 60px;
+}
+
+.form-group {
+	margin-bottom: 40px;
+}
+
+.alert.alert-danger {
+	margin-top: 5px;
+	padding: 5px;
+}
