@@ -7,14 +7,14 @@ import {HighChart} from "../../../directives";
 })
 export class ChartDemoComponent implements OnInit {
 
-	constructor () {
+	constructor() {
 	}
 
-	ngOnInit () {
+	ngOnInit() {
 	}
 
 	// chart主题
-	primaryColor: string = "#F1F1F1";
+	primaryColor:string = "#F1F1F1";
 	theme = {
 		chart: {
 			backgroundColor: "#1D89DA"

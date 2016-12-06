@@ -7,19 +7,19 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-	admin: any = {};
+	admin:any = {};
 
-	constructor (public router: Router, private route: ActivatedRoute) {
+	constructor(public router:Router, private route:ActivatedRoute) {
 	}
 
-	ngOnInit () {
+	ngOnInit() {
 	}
 
-	login () {
+	login() {
 		this.router.navigate(["/home"]);
 	}
 
-	clearpass () {
+	clearpass() {
 		this.admin.password = "";
 	}
 }

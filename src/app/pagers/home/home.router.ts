@@ -29,12 +29,12 @@ const homeRoutes: Routes = [
 				component: EditorDemoComponent
 			},
 			{
-				path: 'chart',
-				component: ChartDemoComponent
+				path: 'lazy',
+				loadChildren: 'app/pagers/home/lazy/lazy.module#LazyModule'
 			},
 			{
-				path: 'lazy',
-				loadChildren: './lazy/lazy.module#LazyModule'
+				path: 'chart',
+				component: ChartDemoComponent
 			}
 		]
 	}
