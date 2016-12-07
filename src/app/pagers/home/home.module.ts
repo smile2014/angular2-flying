@@ -11,26 +11,30 @@ import {HomeComponent} from './home.component';
 import {HomeRoutingModule} from "./home.router";
 import {BootstrapThemeComponent} from './bootstrap-theme';
 import {EditorDemoComponent} from "./editor-demo";
-import {EssenceNg2EditorModule} from "../../components";
+import {EssenceNg2EditorModule, EssenceNg2EsriMapModule} from "../../components";
 import {ChartDemoComponent} from "./chart-demo";
 import {EssenceNg2ChartModule} from "../../directives";
+import {EsriMapComponent} from './esri-map';
 
 @NgModule({
-	imports: [
-		CommonModule,
-		FormsModule,
-		HttpModule,
-		EssenceNg2EditorModule,
-		EssenceNg2ChartModule,
-		HomeRoutingModule
-	],
-	declarations: [
-		HomeComponent,
-		BootstrapThemeComponent,
-		EditorDemoComponent,
-		ChartDemoComponent
-	],
-	providers: []
+    imports: [
+        CommonModule,
+        FormsModule,
+        HttpModule,
+        EssenceNg2EditorModule,
+        EssenceNg2ChartModule,
+        EssenceNg2EsriMapModule,
+        HomeRoutingModule
+    ],
+    declarations: [
+        HomeComponent,
+        BootstrapThemeComponent,
+        EditorDemoComponent,
+        ChartDemoComponent,
+        EsriMapComponent
+    ],
+    providers: [
+    ]
 })
 export class HomeModule {
 }

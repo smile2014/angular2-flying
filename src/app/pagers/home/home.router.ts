@@ -9,44 +9,49 @@ import {HomeComponent} from "./home.component";
 import {BootstrapThemeComponent} from "./bootstrap-theme";
 import {EditorDemoComponent} from "./editor-demo";
 import {ChartDemoComponent} from "./chart-demo";
+import {EsriMapComponent} from "./esri-map";
 
 const homeRoutes: Routes = [
-	{
-		path: '',
-		redirectTo: '/home/editor',
-		pathMatch: 'full'
-	},
-	{
-		path: '',
-		component: HomeComponent,
-		children: [
-			{
-				path: 'bootstrap',
-				component: BootstrapThemeComponent
-			},
-			{
-				path: 'editor',
-				component: EditorDemoComponent
-			},
-			{
-				path: 'lazy',
-				loadChildren: 'app/pagers/home/lazy/lazy.module#LazyModule'
-			},
-			{
-				path: 'chart',
-				component: ChartDemoComponent
-			}
-		]
-	}
+    {
+        path: '',
+        redirectTo: '/home/editor',
+        pathMatch: 'full'
+    },
+    {
+        path: '',
+        component: HomeComponent,
+        children: [
+            {
+                path: 'editor',
+                component: EditorDemoComponent
+            },
+            {
+                path: 'chart',
+                component: ChartDemoComponent
+            },
+            {
+                path: 'bootstrap',
+                component: BootstrapThemeComponent
+            },
+            {
+                path: 'lazy',
+                loadChildren: 'app/pagers/home/lazy/lazy.module#LazyModule'
+            },
+            {
+                path: 'esri',
+                component: EsriMapComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({
-	imports: [
-		RouterModule.forChild(homeRoutes)
-	],
-	exports: [
-		RouterModule
-	]
+    imports: [
+        RouterModule.forChild(homeRoutes)
+    ],
+    exports: [
+        RouterModule
+    ]
 })
 export class HomeRoutingModule {
 }

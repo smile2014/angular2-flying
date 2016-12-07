@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 import {ControlValueAccessor, NgModel} from "@angular/forms";
 
-declare var UE: any;
+declare let UE: any;
 
 @Component({
     selector: 'essence-ng2-editor[ngModel]',
