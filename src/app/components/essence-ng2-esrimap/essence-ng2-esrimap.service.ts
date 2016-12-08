@@ -11,17 +11,17 @@ export class EssenceNg2EsriMapService {
 
     esriLoader: EsriLoaderService;
 
-    constructor (esriLoader: EsriLoaderService) {
+    constructor(esriLoader: EsriLoaderService) {
         this.esriLoader = esriLoader;
     }
 
-    loadEsriApi (): any {
+    loadEsriApi(): any {
         return this.esriLoader.load({url: this.apiUrl})['then'](() => {
             this.isLoad = true;
         });
     }
 
-    loadEsriModules (modules: any): any {
+    loadEsriModules(modules: any): any {
         return this.esriLoader.loadModules(modules);
     }
 }

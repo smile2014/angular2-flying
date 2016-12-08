@@ -1,6 +1,7 @@
-<div style="margin-bottom: 20px;">
-	<essence-ng2-esrimap #map1></essence-ng2-esrimap>
+<div style="height: 600px;">
+	<essence-ng2-esrimap (mapReady)="mapReady($event)"></essence-ng2-esrimap>
 </div>
 <div>
-	<essence-ng2-esrimap #map2></essence-ng2-esrimap>
+	<input type="button" (click)="getExtent()" value="获取地图范围">
+	<input type="button" (click)="addPoint()" value="添加点">
 </div>

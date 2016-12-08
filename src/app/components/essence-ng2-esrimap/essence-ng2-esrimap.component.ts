@@ -1,4 +1,4 @@
-import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
+import {Component, OnInit, ElementRef, ViewChild, Output, EventEmitter, AfterContentChecked} from '@angular/core';
 
 import {EssenceNg2EsriMapService} from "./essence-ng2-esrimap.service";
 
@@ -10,18 +10,20 @@ import {EssenceNg2EsriMapService} from "./essence-ng2-esrimap.service";
 export class EssenceNg2EsriMapComponent implements OnInit {
     @ViewChild('map') mapEl: ElementRef;
     map: any;
-    isLoad: boolean = false;
+    index: number = 0;
 
-    constructor (private esriService: EssenceNg2EsriMapService) {
-        this.isLoad = this.esriService.isLoad;
-    }
+    // 编辑器准备就绪后会触发该事件
+    @Output()
+    mapReady: EventEmitter<any> = new EventEmitter<any>(false);
+
+    constructor (private esriService: EssenceNg2EsriMapService) {}
 
     ngOnInit () {
         if (this.map) {
             return;
         }
 
-        if (!this.isLoad) {
+        if (!this.esriService.isLoad) {
             this.loadEsriApi().then(() => {
                 this.initMap();
             });
@@ -39,11 +41,22 @@ export class EssenceNg2EsriMapComponent implements OnInit {
     }
 
     initMap (): void {
-        this.loadEsriModules(['esri/map']).then(([Map]) => {
+        this.loadEsriModules(['esri/map', "esri/geometry/Extent"]).then(([Map, Extent]) => {
             this.map = new Map(this.mapEl.nativeElement, {
-                center: [-118, 34.5],
-                zoom: 8,
+                extent: new Extent({
+                    xmin: 5606692.635760968,
+                    ymin: 1545885.5138556694,
+                    xmax: 16760383.803130921,
+                    ymax: 7416249.286155645,
+                    spatialReference: {
+                        wkid: 102100,
+                        latestWkid: 3857
+                    }
+                }),
                 basemap: 'dark-gray'
+            });
+            this.map.on("load", () => {
+                this.mapReady.emit(this.map);
             });
         });
     }

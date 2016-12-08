@@ -8,18 +8,18 @@ import {AppRoutingModule} from "./app.router";
 import {LoginComponent} from './pagers';
 
 @NgModule({
-	imports: [
-		BrowserModule,
-		FormsModule,
-		HttpModule,
-		AppRoutingModule
-	],
-	declarations: [
-		AppComponent,
-		LoginComponent
-	],
-	providers: [],
-	bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+    declarations: [
+        AppComponent,
+        LoginComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }
