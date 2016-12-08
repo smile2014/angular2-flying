@@ -6,8 +6,7 @@ import {EssenceNg2EsriMapComponent} from "../../../components";
     styleUrls: ['./esri-map.component.scss']
 })
 export class EsriMapComponent implements OnInit {
-    @ViewChild(EssenceNg2EsriMapComponent) esriMap: EssenceNg2EsriMapComponent;
-    map: any;
+    esriMapComponent: any;
     SimpleMarkerSymbol: any;
     Graphic: any;
 
@@ -16,9 +15,9 @@ export class EsriMapComponent implements OnInit {
     ngOnInit () {
     }
 
-    mapReady ($event) {
-        this.map = $event;
-        this.esriMap.loadEsriModules([
+    ready ($event) {
+        this.esriMapComponent = $event;
+        this.esriMapComponent.loadEsriModules([
             "esri/symbols/SimpleMarkerSymbol",
             "esri/graphic"])
             .then(([
@@ -31,11 +30,10 @@ export class EsriMapComponent implements OnInit {
     }
 
     getExtent (): void {
-        console.log(this.map.extent);
+        console.log(this.esriMapComponent.map.extent);
     }
 
     addPoint (): void {
-
     }
 
 }

@@ -8,13 +8,13 @@ import {EssenceNg2EsriMapService} from "./essence-ng2-esrimap.service";
     styleUrls: ['./essence-ng2-esrimap.style.scss']
 })
 export class EssenceNg2EsriMapComponent implements OnInit {
-    @ViewChild('map') mapEl: ElementRef;
+    @ViewChild('map') mapEle: ElementRef;
     map: any;
     index: number = 0;
 
-    // 编辑器准备就绪后会触发该事件
+    // 地图初始化完成之后触发该事件
     @Output()
-    mapReady: EventEmitter<any> = new EventEmitter<any>(false);
+    ready: EventEmitter<any> = new EventEmitter<any>(false);
 
     constructor (private esriService: EssenceNg2EsriMapService) {}
 
@@ -32,17 +32,13 @@ export class EssenceNg2EsriMapComponent implements OnInit {
         }
     }
 
-    loadEsriApi (): any {
+    private loadEsriApi (): any {
         return this.esriService.loadEsriApi();
     }
 
-    loadEsriModules (modules: any): any {
-        return this.esriService.loadEsriModules(modules);
-    }
-
-    initMap (): void {
+    private initMap (): void {
         this.loadEsriModules(['esri/map', "esri/geometry/Extent"]).then(([Map, Extent]) => {
-            this.map = new Map(this.mapEl.nativeElement, {
+            this.map = new Map(this.mapEle.nativeElement, {
                 extent: new Extent({
                     xmin: 5606692.635760968,
                     ymin: 1545885.5138556694,
@@ -56,8 +52,12 @@ export class EssenceNg2EsriMapComponent implements OnInit {
                 basemap: 'dark-gray'
             });
             this.map.on("load", () => {
-                this.mapReady.emit(this.map);
+                this.ready.emit(this);
             });
         });
+    }
+
+    loadEsriModules (modules: any): any {
+        return this.esriService.loadEsriModules(modules);
     }
 }
