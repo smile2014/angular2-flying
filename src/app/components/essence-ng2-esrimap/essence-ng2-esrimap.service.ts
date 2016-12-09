@@ -7,7 +7,7 @@ export class EssenceNg2EsriMapService {
 
     isLoad: boolean = false;
 
-    apiUrl: string = 'http://js.arcgis.com/3.14/';
+    apiUrl: string = 'http://js.arcgis.com/3.18/';
 
     esriLoader: EsriLoaderService;
 
