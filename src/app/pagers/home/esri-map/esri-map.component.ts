@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {EssenceNg2EsriMapComponent} from "../../../components";
 
 @Component({
@@ -6,7 +6,7 @@ import {EssenceNg2EsriMapComponent} from "../../../components";
     styleUrls: ['./esri-map.component.scss']
 })
 export class EsriMapComponent implements OnInit {
-    esriMapComponent: EssenceNg2EsriMapComponent;
+    esriMapComponent: any;
     SimpleMarkerSymbol: any;
     Graphic: any;
 
@@ -27,5 +27,9 @@ export class EsriMapComponent implements OnInit {
                 this.SimpleMarkerSymbol = SimpleMarkerSymbol;
                 this.Graphic = Graphic;
             });
+    }
+
+    getExtent (): void {
+        console.log(this.esriMapComponent.map.extent);
     }
 }
