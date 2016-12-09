@@ -68,14 +68,17 @@ editorReady ($event) {
 ### 事件
 
 - // 编辑器准备就绪后会触发该事件
+
 @Output()
 ready: EventEmitter<any> = new EventEmitter<any>(false);
 
 - // 执行destroy方法,会触发该事件
+
 @Output()
 destroy: EventEmitter<any> = new EventEmitter<any>(false);
 
 - // 执行reset方法,会触发该事件
+
 @Output()
 reset: EventEmitter<any> = new EventEmitter<any>(false);
 
