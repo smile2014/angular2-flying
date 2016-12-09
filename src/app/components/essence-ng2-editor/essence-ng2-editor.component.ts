@@ -214,7 +214,6 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
         this.ue = null;
     }
 
-    // ueditor常用API
     /**
      * 设置编辑器高度
      * 提示：当配置项autoHeightEnabled为真时,该方法无效
