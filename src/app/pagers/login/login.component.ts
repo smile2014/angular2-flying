@@ -2,24 +2,24 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
-	templateUrl: './login.component.html',
-	styleUrls: ['./login.component.scss']
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-	admin:any = {};
+    admin: any = {};
 
-	constructor(public router:Router, private route:ActivatedRoute) {
-	}
+    constructor (public router: Router, private route: ActivatedRoute) {
+    }
 
-	ngOnInit() {
-	}
+    ngOnInit () {
+    }
 
-	login() {
-		this.router.navigate(["/home"]);
-	}
+    login () {
+        this.router.navigate(["/home"]);
+    }
 
-	clearpass() {
-		this.admin.password = "";
-	}
+    clearpass () {
+        this.admin.password = "";
+    }
 }
