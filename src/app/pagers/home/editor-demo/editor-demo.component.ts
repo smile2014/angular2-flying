@@ -20,11 +20,11 @@ export class EditorDemoComponent implements OnInit {
     }
 
     contentChange ($event) {
-        console.log("contentChange -> ", $event);
+        console.log("contentChange：", $event);
     }
 
     editorReady ($event) {
-        console.log("ready -> ", $event);
+        console.log("ready：", $event);
     }
 
     setHeight (height: number): void {
