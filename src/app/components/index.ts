@@ -3,3 +3,4 @@
  * homepage：http://www.laixiangran.cn.
  */
 export * from './essence-ng2-editor';
+export * from './essence-ng2-esrimap';
