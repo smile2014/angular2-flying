@@ -36,6 +36,10 @@ const homeRoutes: Routes = [
             {
                 path: 'lazy',
                 loadChildren: 'app/pagers/home/lazy/lazy.module#LazyModule'
+            },
+            {
+                path: 'esri',
+                component: EsriMapComponent
             }
         ]
     }
