@@ -10,7 +10,6 @@ import {EssenceNg2EsriMapService} from "./essence-ng2-esrimap.service";
 export class EssenceNg2EsriMapComponent implements OnInit {
     @ViewChild('map') mapEle: ElementRef;
     map: any;
-    index: number = 0;
 
     // 地图初始化完成之后触发该事件
     @Output()
@@ -57,6 +56,11 @@ export class EssenceNg2EsriMapComponent implements OnInit {
         });
     }
 
+    /**
+     * 加载arcgis api for javascript的模块
+     * @param modules
+     * @returns {any}
+     */
     loadEsriModules (modules: any): any {
         return this.esriService.loadEsriModules(modules);
     }
