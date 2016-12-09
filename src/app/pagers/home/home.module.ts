@@ -23,6 +23,7 @@ import {EsriMapComponent} from './esri-map';
         HttpModule,
         EssenceNg2EditorModule,
         EssenceNg2ChartModule,
+        EssenceNg2EsriMapModule,
         HomeRoutingModule
     ],
     declarations: [
