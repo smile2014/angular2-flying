@@ -17,7 +17,7 @@ export class ChartDemoComponent implements OnInit {
 	primaryColor:string = "#F1F1F1";
 	theme = {
 		chart: {
-			backgroundColor: "#1D89DA"
+			backgroundColor: "#010101"
 		},
 		title: {
 			style: {
