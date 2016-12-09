@@ -4,3 +4,4 @@
  */
 export * from './essence-ng2-esrimap.module';
 export * from './essence-ng2-esrimap.component';
+export * from './essence-ng2-esrimap.service';
