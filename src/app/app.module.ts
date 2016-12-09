@@ -9,7 +9,7 @@ import {LoginComponent} from './pagers';
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserModule, // 除了在根模块中导入BrowserModule，在其它特性模块中改为导入CommonModule
         FormsModule,
         HttpModule,
         JsonpModule,
