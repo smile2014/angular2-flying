@@ -61,83 +61,45 @@ editorReady ($event) {
 
 ### 属性
 
-- [(ngModel)]：绑定编辑器内容
-- ueWidth：编辑器宽度（纯数字，不带单位）
-- ueHeight：编辑器高度（纯数字，不带单位）
+- `[(ngModel)]`：绑定编辑器内容
+- `ueWidth`：编辑器宽度（纯数字，不带单位）
+- `ueHeight`：编辑器高度（纯数字，不带单位）
 
 ### 事件
 
-- // 编辑器准备就绪后会触发该事件
+- `ready`：编辑器准备就绪后会触发该事件
 
-@Output()
-ready: EventEmitter<any> = new EventEmitter<any>(false);
+- `destroy`：执行destroy方法,会触发该事件
 
-- // 执行destroy方法,会触发该事件
+- `reset`: 执行reset方法,会触发该事件
 
-@Output()
-destroy: EventEmitter<any> = new EventEmitter<any>(false);
+- `focusEvent`: 执行focus方法,会触发该事件
 
-- // 执行reset方法,会触发该事件
+- `langReady`: 语言加载完成会触发该事件
 
-@Output()
-reset: EventEmitter<any> = new EventEmitter<any>(false);
+- `beforeExecCommand`: 运行命令之后会触发该命令
 
-- // 执行focus方法,会触发该事件
-@Output()
-focusEvent: EventEmitter<any> = new EventEmitter<any>(false);
+- `afterExecCommand`: 运行命令之后会触发该命令
 
-- // 语言加载完成会触发该事件
-@Output()
-langReady: EventEmitter<any> = new EventEmitter<any>(false);
+- `firstBeforeExecCommand`: 运行命令之前会触发该命令
 
-- // 运行命令之后会触发该命令
-@Output()
-beforeExecCommand: EventEmitter<any> = new EventEmitter<any>(false);
+- `beforeGetContent`: 在getContent方法执行之前会触发该事件
 
-- // 运行命令之后会触发该命令
-@Output()
-afterExecCommand: EventEmitter<any> = new EventEmitter<any>(false);
+- `afterGetContent`: 在getContent方法执行之后会触发该事件
 
-- // 运行命令之前会触发该命令
-@Output()
-firstBeforeExecCommand: EventEmitter<any> = new EventEmitter<any>(false);
+- `getAllHtml`: 在getAllHtml方法执行时会触发该事件
 
-- // 在getContent方法执行之前会触发该事件
-@Output()
-beforeGetContent: EventEmitter<any> = new EventEmitter<any>(false);
+- `beforeSetContent`: 在setContent方法执行之前会触发该事件
 
-- // 在getContent方法执行之后会触发该事件
-@Output()
-afterGetContent: EventEmitter<any> = new EventEmitter<any>(false);
+- `afterSetContent`: 在setContent方法执行之后会触发该事件
 
-- // 在getAllHtml方法执行时会触发该事件
-@Output()
-getAllHtml: EventEmitter<any> = new EventEmitter<any>(false);
+- `selectionchange`: 每当编辑器内部选区发生改变时，将触发该事件。**警告： 该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理**
 
-- // 在setContent方法执行之前会触发该事件
-@Output()
-beforeSetContent: EventEmitter<any> = new EventEmitter<any>(false);
+- `beforeSelectionChange`: 在所有selectionchange的监听函数执行之前，会触发该事件
 
-- // 在setContent方法执行之后会触发该事件
-@Output()
-afterSetContent: EventEmitter<any> = new EventEmitter<any>(false);
+- `afterSelectionChange`: 在所有selectionchange的监听函数执行完之后，会触发该事件
 
-- // 每当编辑器内部选区发生改变时，将触发该事件
-// 警告： 该事件的触发非常频繁，不建议在该事件的处理过程中做重量级的处理
-@Output()
-selectionchange: EventEmitter<any> = new EventEmitter<any>(false);
-
-- // 在所有selectionchange的监听函数执行之前，会触发该事件
-@Output()
-beforeSelectionChange: EventEmitter<any> = new EventEmitter<any>(false);
-
-- // 在所有selectionchange的监听函数执行完之后，会触发该事件
-@Output()
-afterSelectionChange: EventEmitter<any> = new EventEmitter<any>(false);
-
-- // 编辑器内容发生改变时会触发该事件
-@Output()
-contentChange: EventEmitter<any> = new EventEmitter<any>(false);
+- `contentChange`: 编辑器内容发生改变时会触发该事件
 
 ### 实例方法（更多的方法根据需求再添加）
 
