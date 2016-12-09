@@ -20,15 +20,17 @@ This is a bootstrap-fileinput directive for Angular2.
 ### index.html引入UEditor
 ```html
 // css
-<link rel="stylesheet" href="./assets/scripts/bootstrap-fileinput/css/fileinput.min.css">
+<link href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/css/fileinput.min.css" rel="stylesheet">
 
 // script
-<script src="./assets/scripts/bootstrap-fileinput/js/plugins/canvas-to-blob.min.js"></script>
-<script src="./assets/scripts/bootstrap-fileinput/js/plugins/sortable.min.js"></script>
-<script src="./assets/scripts/bootstrap-fileinput/js/plugins/purify.min.js"></script>
-<script src="./assets/scripts/bootstrap-fileinput/js/fileinput.min.js"></script>
-<script src="./assets/scripts/bootstrap-fileinput/themes/fa/theme.js"></script>
-<script src="./assets/scripts/bootstrap-fileinput/js/locales/zh.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/plugins/canvas-to-blob.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/plugins/sortable.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/plugins/purify.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/fileinput.min.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/themes/fa/theme.js"></script>
+<script src="http://cdn.bootcss.com/bootstrap-fileinput/4.3.5/js/locales/zh.js"></script>
 ```
 
 ### module中导入
