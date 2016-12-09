@@ -15,9 +15,6 @@ NPM >= 3
 ## 安装及启动
 
 ```shell
-```
-
-```shell
 npm install -g angular-cli@1.0.0-beta.22-1
 
 npm install
