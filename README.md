@@ -79,20 +79,26 @@ npm install
 
 了解 [essence-ng2-editor](./src/app/components/essence-ng2-editor/README.md)
 
-去 [UEditor官网](http://ueditor.baidu.com/website/index.html) 学习
+去学习 [UEditor](http://ueditor.baidu.com/website/index.html)
 
 ### Bootstrap-fileInput
 
 了解 [essence-ng2-fileInput](./src/app/directives/essence-ng2-fileInput/README.md)
 
-去 [Bootstrap-fileinput官网](http://plugins.krajee.com/file-input#installation) 学习
+去学习 [Bootstrap-fileinput](http://plugins.krajee.com/file-input#installation)
 
 ### HighCharts
 
 了解 [essence-ng2-chart](./src/app/directives/essence-ng2-chart/README.md)
 
-去 [HighCharts官网](http://www.hcharts.cn/) 学习
+去学习 [HighCharts](http://www.hcharts.cn/)
 
 ### essence-ng2-checked
 
 了解 [essence-ng2-checked](./src/app/directives/essence-ng2-checked/README.md)
+
+### essence-ng2-esrimap
+
+了解 [essence-ng2-esrimap](./src/app/components/essence-ng2-esrimap/README.md)
+
+去学习 [ArcGIS API for JavaScript 3.18](https://developers.arcgis.com/javascript/3/)
