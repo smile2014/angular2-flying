@@ -6,6 +6,8 @@ import {HttpModule, JsonpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app.router";
 import {LoginComponent} from './pagers';
+import {EssenceNg2EsriMapService} from "./components";
+import {EsriLoaderService} from 'angular2-esri-loader';
 
 @NgModule({
     imports: [
@@ -19,7 +21,10 @@ import {LoginComponent} from './pagers';
         AppComponent,
         LoginComponent
     ],
-    providers: [],
+    providers: [
+		EsriLoaderService,
+		EssenceNg2EsriMapService
+	],
     bootstrap: [AppComponent]
 })
 export class AppModule {
