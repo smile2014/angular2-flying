@@ -15,7 +15,7 @@ const appRoutes:Routes = [
 	},
 	{
 		path: 'home',
-		loadChildren: './pagers/home/home.module#HomeModule'
+		loadChildren: './pages/home/home.module#HomeModule'
 	},
 	{
 		path: 'login',

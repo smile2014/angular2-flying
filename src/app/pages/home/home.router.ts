@@ -6,10 +6,10 @@
 import {Routes, RouterModule} from "@angular/router";
 import {NgModule} from "@angular/core";
 import {HomeComponent} from "./home.component";
-import {BootstrapThemeComponent} from "./bootstrap-theme";
-import {EditorDemoComponent} from "./editor-demo";
-import {ChartDemoComponent} from "./chart-demo";
-import {EsriMapComponent} from "./esri-map";
+import {BootstrapThemeComponent} from "./pages/bootstrap-theme";
+import {EditorDemoComponent} from "./pages/editor-demo";
+import {ChartDemoComponent} from "./pages/chart-demo";
+import {EsriMapComponent} from "./pages/esri-map";
 
 const homeRoutes: Routes = [
     {
@@ -35,7 +35,7 @@ const homeRoutes: Routes = [
             },
             {
                 path: 'lazy',
-                loadChildren: 'app/pagers/home/lazy/lazy.module#LazyModule'
+                loadChildren: 'app/pages/home/pages/lazy/lazy.module#LazyModule'
             },
             {
                 path: 'esri',

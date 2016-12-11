@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {HighChart} from "../../../directives";
 
 @Component({
-	templateUrl: './chart-demo.component.html',
-	styleUrls: ['./chart-demo.component.scss']
+	templateUrl: 'chart-demo.component.html',
+	styleUrls: ['chart-demo.component.scss']
 })
 export class ChartDemoComponent implements OnInit {
 

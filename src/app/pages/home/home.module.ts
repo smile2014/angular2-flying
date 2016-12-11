@@ -9,12 +9,12 @@ import {CommonModule} from "@angular/common";
 
 import {HomeComponent} from './home.component';
 import {HomeRoutingModule} from "./home.router";
-import {BootstrapThemeComponent} from './bootstrap-theme';
-import {EditorDemoComponent} from "./editor-demo";
+import {BootstrapThemeComponent} from './pages/bootstrap-theme';
+import {EditorDemoComponent} from "./pages/editor-demo";
 import {EssenceNg2EditorModule, EssenceNg2EsriMapModule} from "../../components";
-import {ChartDemoComponent} from "./chart-demo";
+import {ChartDemoComponent} from "./pages/chart-demo";
 import {EssenceNg2ChartModule} from "../../directives";
-import {EsriMapComponent} from './esri-map';
+import {EsriMapComponent} from './pages/esri-map';
 
 @NgModule({
     imports: [
