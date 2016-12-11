@@ -20,6 +20,24 @@ This is a EsriMap component for Angular2.
 <link rel="stylesheet" href="http://js.arcgis.com/3.18/esri/css/esri.css">
 ```
 
+### app.module中导入
+```typescript
+import {EssenceNg2EsriMapService} from "./components/essence-ng2-esrimap/essence-ng2-esrimap.service";
+import {EsriLoaderService} from 'angular2-esri-loader';
+
+@NgModule({
+    imports: [],
+    declarations: [],
+    providers: [
+		EsriLoaderService,
+		EssenceNg2EsriMapService
+	],
+    bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
+
 ### module中导入
 ```typescript
 import {EssenceNg2EsriMapModule} from "../components/essence-ng2-esrimap";
