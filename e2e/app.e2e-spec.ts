@@ -1,6 +1,6 @@
 import {AngularCliBeginnerPage} from './app.po';
 
-describe('angular-cli-beginner App', function () {
+describe('angular-cli-flying App', function () {
 	let page: AngularCliBeginnerPage;
 
 	beforeEach(() => {

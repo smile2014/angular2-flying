@@ -5,7 +5,7 @@
 
 import {Routes, RouterModule} from "@angular/router";
 import {NgModule} from "@angular/core";
-import {LoginComponent} from "./pagers";
+import {LoginComponent} from "./pages";
 
 const appRoutes:Routes = [
 	{

@@ -5,7 +5,7 @@ import {HttpModule, JsonpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from "./app.router";
-import {LoginComponent} from './pagers';
+import {LoginComponent} from './pages';
 import {EssenceNg2EsriMapService} from "./components";
 import {EsriLoaderService} from 'angular2-esri-loader';
 
