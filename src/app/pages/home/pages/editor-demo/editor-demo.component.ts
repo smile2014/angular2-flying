@@ -1,9 +1,9 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {EssenceNg2EditorComponent} from "../../../components";
+import {EssenceNg2EditorComponent} from "../../../../components";
 
 @Component({
-    templateUrl: 'editor-demo.component.html',
-    styleUrls: ['editor-demo.component.scss']
+    templateUrl: './editor-demo.component.html',
+    styleUrls: ['./editor-demo.component.scss']
 })
 export class EditorDemoComponent implements OnInit {
 

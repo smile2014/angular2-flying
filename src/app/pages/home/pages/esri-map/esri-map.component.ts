@@ -1,9 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {EssenceNg2EsriMapComponent} from "../../../components";
 
 @Component({
-    templateUrl: 'esri-map.component.html',
-    styleUrls: ['esri-map.component.scss']
+    templateUrl: './esri-map.component.html',
+    styleUrls: ['./esri-map.component.scss']
 })
 export class EsriMapComponent implements OnInit {
     esriMapComponent: any;
