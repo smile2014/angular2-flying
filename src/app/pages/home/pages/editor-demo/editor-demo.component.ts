@@ -30,4 +30,8 @@ export class EditorDemoComponent implements OnInit {
     setHeight (height: number): void {
         this.editor.setHeight(height);
     }
+
+	test (text: string): void {
+    	console.log(text);
+	}
 }
