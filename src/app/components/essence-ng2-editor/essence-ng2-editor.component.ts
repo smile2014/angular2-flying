@@ -7,8 +7,8 @@ declare let UE: any;
 
 @Component({
     selector: 'essence-ng2-editor[ngModel]',
-    templateUrl: './essence-ng2-editor.template.html',
-    styleUrls: ['./essence-ng2-editor.style.scss'],
+    templateUrl: './essence-ng2-editor.component.html',
+    styleUrls: ['./essence-ng2-editor.component.scss'],
     providers: [NgModel]
 })
 export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, OnDestroy {

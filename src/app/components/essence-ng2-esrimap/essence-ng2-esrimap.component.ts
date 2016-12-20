@@ -4,8 +4,8 @@ import {EssenceNg2EsriMapService} from "./essence-ng2-esrimap.service";
 
 @Component({
     selector: 'essence-ng2-esrimap',
-    templateUrl: './essence-ng2-esrimap.template.html',
-    styleUrls: ['./essence-ng2-esrimap.style.scss']
+    templateUrl: './essence-ng2-esrimap.component.html',
+    styleUrls: ['./essence-ng2-esrimap.component.scss']
 })
 export class EssenceNg2EsriMapComponent implements OnInit {
     // esri modules
