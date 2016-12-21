@@ -3,7 +3,7 @@ import {
 } from '@angular/core';
 import {ControlValueAccessor, NgModel} from "@angular/forms";
 
-declare let UE: any;
+declare var UE: any;
 
 @Component({
     selector: 'essence-ng2-editor[ngModel]',
@@ -13,12 +13,22 @@ declare let UE: any;
 })
 export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
     ue: any = null;
-    width: number = 0;
-    height: number = 0;
+    width: any;
+    height: any;
     text: string;
     cd: NgModel;
     renderer: Renderer;
     elementRef: ElementRef;
+    config: any;
+
+    defaultConfig: any = {
+        autoHeightEnabled: true,
+        allowDivTransToP: false,
+        toolbars: [
+            ['fullscreen', 'source', 'undo', 'redo'],
+            ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc']
+        ]
+    };
 
     Editor: any = UE.Editor;
     EventBase: any = UE.EventBase;
@@ -31,22 +41,31 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
     utils: Function = UE.utils;
 
     @Input()
-    set ueWidth (width: number) {
+    set ueWidth (width: any) {
         this.width = width;
     }
 
-    get ueWidth (): number {
+    get ueWidth (): any {
         return this.width;
     }
 
     @Input()
-    set ueHeight (height: number) {
+    set ueHeight (height: any) {
         this.height = height;
         this.setHeight(height);
     }
 
-    get ueHeight (): number {
+    get ueHeight (): any {
         return this.height;
+    }
+
+    @Input()
+    set option (config: any) {
+        this.config = config;
+    }
+
+    get option (): any {
+        return this.config;
     }
 
     // 编辑器准备就绪后会触发该事件
@@ -131,75 +150,76 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
             console.warn("编辑器容器最好设置id！");
         }
         this.text = this.cd.value;
-        this.renderer.setElementStyle(this.elementRef.nativeElement, 'width', this.width + "px");
-        this.renderer.setElementStyle(this.elementRef.nativeElement, 'height', this.height + "px");
-        this.ue = UE.getEditor(this.elementRef.nativeElement.id);
+        // this.renderer.setElementStyle(this.elementRef.nativeElement, 'width', this.width ? (this.width.toString().indexOf("%") > 0 ? this.width : this.width + "px") : "100%");
+        // this.renderer.setElementStyle(this.elementRef.nativeElement, 'height', this.height ? (this.height.toString().indexOf("%") > 0 ? this.height : this.height + "px") : "100%");
+        let con: any = $.extend(true, {}, this.defaultConfig, this.config);
+        this.ue = UE.getEditor(this.elementRef.nativeElement.id, con);
 
         // 注册事件
         this.ue.addListener('ready', (editor: any) => {
             this.setContent(this.text);
-            this.ready.emit(editor);
-			this.focus();
+            this.ready.emit(this);
+            this.focus();
         });
 
         this.ue.addListener('destroy', (editor: any) => {
-            this.destroy.emit(true);
+            this.destroy.emit(this);
         });
 
         this.ue.addListener('reset', (editor: any) => {
-            this.reset.emit(true);
+            this.reset.emit(this);
         });
 
         this.ue.addListener('focus', (editor: any) => {
-            this.focusEvent.emit(true);
+            this.focusEvent.emit(this);
         });
 
         this.ue.addListener('langReady', (editor: any) => {
-            this.langReady.emit(true);
+            this.langReady.emit(this);
         });
 
         this.ue.addListener('beforeExecCommand', (editor: any) => {
-            this.beforeExecCommand.emit(true);
+            this.beforeExecCommand.emit(this);
         });
 
         this.ue.addListener('afterExecCommand', (editor: any) => {
-            this.afterExecCommand.emit(true);
+            this.afterExecCommand.emit(this);
         });
 
         this.ue.addListener('firstBeforeExecCommand', (editor: any) => {
-            this.firstBeforeExecCommand.emit(true);
+            this.firstBeforeExecCommand.emit(this);
         });
 
         this.ue.addListener('beforeGetContent', (editor: any) => {
-            this.beforeGetContent.emit(true);
+            this.beforeGetContent.emit(this);
         });
 
         this.ue.addListener('afterGetContent', (editor: any) => {
-            this.afterGetContent.emit(true);
+            this.afterGetContent.emit(this);
         });
 
         this.ue.addListener('getAllHtml', (editor: any) => {
-            this.getAllHtml.emit(true);
+            this.getAllHtml.emit(this);
         });
 
         this.ue.addListener('beforeSetContent', (editor: any) => {
-            this.beforeSetContent.emit(true);
+            this.beforeSetContent.emit(this);
         });
 
         this.ue.addListener('afterSetContent', (editor: any) => {
-            this.afterSetContent.emit(true);
+            this.afterSetContent.emit(this);
         });
 
         this.ue.addListener('selectionchange', (editor: any) => {
-            this.selectionchange.emit(true);
+            this.selectionchange.emit(this);
         });
 
         this.ue.addListener('beforeSelectionChange', (editor: any) => {
-            this.beforeSelectionChange.emit(true);
+            this.beforeSelectionChange.emit(this);
         });
 
         this.ue.addListener('afterSelectionChange', (editor: any) => {
-            this.afterSelectionChange.emit(true);
+            this.afterSelectionChange.emit(this);
         });
 
         this.ue.addListener('contentChange', () => {
@@ -210,10 +230,11 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
     }
 
     ngOnDestroy () {
-        this.ue.destroy();
+        this.ue && this.ue.destroy();
         this.ue = null;
     }
 
+    // ueditor常用API
     /**
      * 设置编辑器高度
      * 提示：当配置项autoHeightEnabled为真时,该方法无效
@@ -236,7 +257,7 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
      * 获取编辑器html内容
      */
     getContent (): any {
-       return this.ue && this.ue.getContent();
+        return this.ue && this.ue.getContent();
     }
 
     /**
@@ -316,12 +337,28 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
         return this.ue && this.ue.selection.getText();
     }
 
+    /**
+     * 执行命令
+     * @param command
+     * @param content
+     */
+    executeCommand (command: string, content?: string) {
+        if (content) {
+            this.ue && this.ue.execCommand(command, content);
+        } else {
+            this.ue && this.ue.execCommand(command);
+        }
+    }
+
+
     // 以下实现ControlValueAccessor接口的方法
     writeValue (value: string): void {
         this.text = value;
     }
 
-    registerOnChange (fn: any): void {}
+    registerOnChange (fn: any): void {
+    }
 
-    registerOnTouched (fn: any): void {}
+    registerOnTouched (fn: any): void {
+    }
 }
