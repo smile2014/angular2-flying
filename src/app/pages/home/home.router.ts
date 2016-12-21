@@ -10,6 +10,7 @@ import {BootstrapThemeComponent} from "./pages/bootstrap-theme";
 import {EditorDemoComponent} from "./pages/editor-demo";
 import {ChartDemoComponent} from "./pages/chart-demo";
 import {EsriMapComponent} from "./pages/esri-map";
+import {PrintDemoComponent} from "./pages/print-demo/print-demo.component";
 
 const homeRoutes: Routes = [
     {
@@ -40,6 +41,10 @@ const homeRoutes: Routes = [
             {
                 path: 'esri',
                 component: EsriMapComponent
+            },
+            {
+                path: 'print',
+                component: PrintDemoComponent
             }
         ]
     }

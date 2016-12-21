@@ -15,6 +15,7 @@ import {EssenceNg2EditorModule, EssenceNg2EsriMapModule} from "../../components"
 import {ChartDemoComponent} from "./pages/chart-demo";
 import {EssenceNg2ChartModule} from "../../directives";
 import {EsriMapComponent} from './pages/esri-map';
+import {PrintDemoComponent} from './pages/print-demo';
 
 @NgModule({
     imports: [
@@ -31,10 +32,10 @@ import {EsriMapComponent} from './pages/esri-map';
         BootstrapThemeComponent,
         EditorDemoComponent,
         ChartDemoComponent,
-        EsriMapComponent
+        EsriMapComponent,
+        PrintDemoComponent
     ],
-    providers: [
-    ]
+    providers: []
 })
 export class HomeModule {
 }

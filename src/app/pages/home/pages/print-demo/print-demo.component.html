@@ -1,0 +1,22 @@
+<iframe #printElement frameborder="0"></iframe>
+
+<table #table class="table table-striped">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Username</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let user of datas; let i = index">
+			<td>{{i}}</td>
+			<td>{{user?.firstName}}</td>
+			<td>{{user?.lastName}}</td>
+			<td>{{user?.userName}}</td>
+		</tr>
+	</tbody>
+</table>
+
+<input type="button" value="打印表格" (click)="print(table)">
