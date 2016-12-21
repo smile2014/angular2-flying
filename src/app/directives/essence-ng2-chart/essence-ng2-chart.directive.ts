@@ -3,63 +3,62 @@
  * homepage：http://www.laixiangran.cn.
  */
 
-import {Directive, ElementRef, Input, OnInit, OnDestroy, DoCheck} from "@angular/core";
+import {Directive, ElementRef, Input, OnInit, OnDestroy, DoCheck, Component} from "@angular/core";
 
 import * as Highcharts from "highcharts";
 
 export class HighChart {
-	public ref: any;
+    public ref: any;
 
-	constructor (public options: any) {
-	}
+    constructor (public options: Object) {}
 
-	getSeries () {
-		return this.options["series"];
-	}
+    getSeries () {
+        return this.options["series"];
+    }
 
-	setSeries (series: any) {
-		this.options["series"] = series;
-	}
+    setSeries (series: any) {
+        this.options["series"] = series;
+    }
 }
 
 @Directive({
-	selector: "[essence-ng2-chart]"
+    selector: "[essence-ng2-chart]"
 })
 export class EssenceNg2ChartDirective implements OnInit, OnDestroy, DoCheck {
-	private el: HTMLElement;
-	private oldSeries: any;
+    private el: HTMLElement;
+    private oldSeries: any;
 
-	constructor (el: ElementRef) {
-		this.el = el.nativeElement;
-	}
+    constructor (el: ElementRef) {
+        this.el = el.nativeElement;
+    }
 
-	@Input("chart") highChart: HighChart;
-	@Input("theme") theme: Object;
+    @Input("chart") highChart: HighChart;
+    @Input("chart-theme") theme: Object;
 
-	ngOnInit () {
-		this.init();
-	}
+    ngOnInit () {
+        this.init();
+    }
 
-	ngOnDestroy () {
-		this.destroy();
-	}
+    ngOnDestroy () {
+        this.destroy();
+    }
 
-	ngDoCheck () {
-		if (this.highChart.getSeries() !== this.oldSeries) {
-			this.oldSeries = this.highChart.getSeries();
-			this.destroy();
-			this.init();
-		}
-	}
+    ngDoCheck () {
+        if (this.highChart.getSeries() !== this.oldSeries) {
+            this.oldSeries = this.highChart.getSeries();
+            this.destroy();
+            this.init();
+        }
+    }
 
-	init () {
-		Highcharts.setOptions(this.theme);
-		this.highChart.ref = new Highcharts.Chart(this.el, this.highChart.options);
-	}
+    init () {
+        Highcharts.setOptions(this.theme);
+        this.highChart.ref = new Highcharts.Chart(this.el, this.highChart.options);
+    }
 
-	destroy () {
-		if (this.highChart.ref) {
-			this.highChart.ref.destroy();
-		}
-	}
+    destroy () {
+        if (this.highChart.ref) {
+            this.highChart.ref.destroy();
+        }
+    }
 }

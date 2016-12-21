@@ -34,7 +34,7 @@ import {EssenceNg2ChartModule} from "../directives/essence-ng2-chart";
 
 ### template中使用
 ```html
-<div [chart]="chart" [theme]="theme" style="width: 37.5rem; height: 300px; margin: 0 auto; padding: 0"></div>
+<div essence-ng2-chart [chart]="chart" [chart-theme]="theme" style="width: 37.5rem; height: 300px; margin: 0 auto; padding: 0"></div>
 ```
 
 ### 对应的component
@@ -84,7 +84,7 @@ theme= {
 // chart数据
 categories = ["西冉村", "宝山", "苗寨", "四季青", "北坞村", "金河闸", "田村", "香山"];
 datas = [100, 120, 130, 140, 250, 160, 230, 180];
-chart = new Chart({
+chart = new HightChart({
     chart: {
         type: "column"
     },
