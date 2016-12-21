@@ -3,8 +3,6 @@
 <div class="row">
 	<div class="col-md-12">
 		<essence-ng2-editor #editor id="editor" #editor [(ngModel)]="model_text"
-							[ueWidth]="e_width"
-							[ueHeight]="e_height"
 							(contentChange)="contentChange($event)"
 							(ready)="editorReady($event)"
 							(click)="test(editor.text)">
