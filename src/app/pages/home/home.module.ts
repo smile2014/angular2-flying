@@ -16,16 +16,18 @@ import {ChartDemoComponent} from "./pages/chart-demo";
 import {EssenceNg2ChartModule} from "../../directives";
 import {EsriMapComponent} from './pages/esri-map';
 import {PrintDemoComponent} from './pages/print-demo';
+import {EssenceNg2PrintModule} from "../../components";
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         HttpModule,
-        EssenceNg2EditorModule,
-        EssenceNg2ChartModule,
-        EssenceNg2EsriMapModule,
-        HomeRoutingModule
+		HomeRoutingModule,
+		EssenceNg2EditorModule,
+		EssenceNg2ChartModule,
+		EssenceNg2EsriMapModule,
+		EssenceNg2PrintModule
     ],
     declarations: [
         HomeComponent,

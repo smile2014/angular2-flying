@@ -1,0 +1,63 @@
+$normal-color: #ffffff;
+$normal-background-color: #5cb85c;
+$normal-border-color: #4cae4c;
+$fha-background-color: #449d44; // f: focus, h: hover, a: active
+$fa-border-color: #255625;
+$ha-border-color: #398439;
+
+iframe {
+	position: absolute;
+	width: 0;
+	height: 0;
+	left: -1000px;
+	top: -1000px;
+}
+
+.print-btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.print-btn-success {
+	color: $normal-color;
+	background-color: $normal-background-color;
+	border-color: $normal-border-color;
+}
+
+.print-btn-success:focus,
+.print-btn-success.focus {
+	color: $normal-color;
+	background-color: $fha-background-color;
+	border-color: $fa-border-color;
+}
+
+.print-btn-success:hover {
+	color: $normal-color;
+	background-color: $fha-background-color;
+	border-color: $ha-border-color;
+}
+
+.print-btn-success:active,
+.print-btn-success.active {
+	color: $normal-color;
+	background-color: $fha-background-color;
+	border-color: $ha-border-color;
+}
+
+.print-btn-success:active,
+.print-btn-success.active {
+	background-image: none;
+}

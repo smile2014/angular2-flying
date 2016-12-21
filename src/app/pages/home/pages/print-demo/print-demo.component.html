@@ -1,5 +1,3 @@
-<iframe #printElement frameborder="0"></iframe>
-
 <table #table class="table table-striped">
 	<thead>
 		<tr>
@@ -18,5 +16,11 @@
 		</tr>
 	</tbody>
 </table>
-
-<input type="button" value="打印表格" (click)="print(table)">
+<essence-ng2-print
+	class="pull-right"
+	[btnClass]="{'btn': true, 'btn-info': true}"
+	[printHTML]="table"
+	[printStyle]="printStyle"
+	[printCSS]="printCSS"
+	(printComplete)="printComplete()">
+</essence-ng2-print>
