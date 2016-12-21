@@ -45,7 +45,7 @@ import {EssenceNg2FileInputModule} from "../directives/essence-ng2-fileInput";
 
 ### template中使用
 ```html
-<input id="pic_file" type="file" class="file" multiple
+<input id="pic_file" type="file" class="file" name="pic_file" multiple
        [essence-ng2-fileInput]="fileInputOpts"
        (ready)="ready($event)"
        (filebatchuploadcomplete)="filebatchuploadcomplete($event)"
@@ -102,5 +102,6 @@ fileuploaderror ($event: any) {
 - ready - fileinput初始化完成的事件，$event为当前fileinput的juqery对象
 - fileuploaded - 单个文件上传成功的事件，$event = {event: event, data: data, previewId: previewId, index: index}
 - fileuploaderror - 单个文件上传失败的事件 $event = {event: event, data: data, msg: msg}
-- filebatchuploadcomplete - 批量文件上传成功的事件，$event = {event: event, data: data, previewId: previewId, index: index}
+- filebatchuploadcomplete - 批量文件上传完成的事件，$event = {event: event, data: data, previewId: previewId, index: index}
+- filebatchuploadsuccess - 批量文件上传成功的事件，$event = {event: event, data: data, previewId: previewId, index: index}
 - filebatchuploaderror - 批量文件上传失败的事件 $event = {event: event, data: data, msg: msg}
