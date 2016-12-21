@@ -7,8 +7,8 @@ export class EssenceNg2EsriMapService {
 
     isLoad: boolean = false;
 
-    // apiUrl: string = 'http://js.arcgis.com/3.18/';
-	apiUrl: string = 'http://localhost:8000/arcgis/3.18/api/init.js'; // 这里是本地部署的，没有就用上面的CDN
+    apiUrl: string = 'http://js.arcgis.com/3.18/';
+	// apiUrl: string = 'http://localhost:8000/arcgis/3.18/api/init.js'; // 这里是本地部署的，没有就用上面的CDN
 
     esriLoader: EsriLoaderService;
 
