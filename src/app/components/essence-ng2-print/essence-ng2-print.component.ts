@@ -6,7 +6,6 @@ import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
     styleUrls: ['./essence-ng2-print.component.scss']
 })
 export class EssenceNg2PrintComponent implements OnInit {
-
     @Input() showBtn: boolean; // 是否显示按钮
     @Input() btnClass: Object; // 打印按钮class
     @Input() btnText: string; // 打印按钮文本
