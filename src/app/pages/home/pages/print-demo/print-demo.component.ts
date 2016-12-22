@@ -1,18 +1,21 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewChecked} from '@angular/core';
 import {EssenceNg2PrintComponent} from "../../../../components/essence-ng2-print";
 
 @Component({
     templateUrl: './print-demo.component.html',
     styleUrls: ['./print-demo.component.scss']
 })
-export class PrintDemoComponent implements OnInit {
+export class PrintDemoComponent implements OnInit, AfterViewInit, AfterViewChecked {
     @ViewChild('print1') printComponent: EssenceNg2PrintComponent;
+
+    printDiv: any;
     showHead: boolean = true;
+    hideTable1: boolean = false;
     datas: any[];
     printCSS: string[];
     printStyle: string;
 
-    constructor () {
+    constructor (private elRef: ElementRef) {
         this.datas = [
             {
                 "firstName": 'Mark',
@@ -43,14 +46,34 @@ export class PrintDemoComponent implements OnInit {
     ngOnInit () {
     }
 
+    ngAfterViewInit () {
+    }
+
+    getPrintDiv () {
+        for (let i: number = 0; i < this.elRef.nativeElement.childNodes.length; i++) {
+            let node: any = this.elRef.nativeElement.childNodes[i];
+            if (node.id === 'print_div') {
+                this.printDiv = node;
+            }
+        }
+    }
+
     printComplete () {
         console.log('打印完成！');
         this.showHead = true;
+        this.hideTable1 = false;
     }
 
     customPrint () {
         this.showHead = false;
+        this.hideTable1 = true;
+        this.getPrintDiv();
         this.printComponent.print();
+    }
+
+    ngAfterViewChecked () {
+        // this.getPrintDiv();
+        console.log(this.printDiv);
     }
 
 }
