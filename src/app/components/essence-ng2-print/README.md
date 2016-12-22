@@ -102,7 +102,7 @@ printComplete () {
 - `btnClass`（`?Object={"print-btn": true,"print-btn-success": true};`） - 打印按钮class，传值与`[ngClass]`一样
 - `printHTML`（`string|HTMLElement`） - 打印的内容
 - `printStyle`（`?string`） - 打印内容style。将写进打印页面的style标签中
-- `printCSS`（`?Array<string>`） - 打印内容css文件路径。将在打印页面生成link标签，支持相对路径
+- `printCSS`（`?Array<string>`） - 打印内容css文件路径。将在打印页面生成link标签，支持绝对/相对路径（相对于当前路由地址）
 
 ### 实例方法
 
