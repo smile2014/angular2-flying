@@ -1,26 +1,58 @@
-<table #table class="table table-striped">
-	<thead>
+<div #div>
+	<table class="table table-striped">
+		<thead *ngIf="showHead">
 		<tr>
 			<th>#</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>Username</th>
 		</tr>
-	</thead>
-	<tbody>
+		</thead>
+		<tbody>
 		<tr *ngFor="let user of datas; let i = index">
 			<td>{{i}}</td>
 			<td>{{user?.firstName}}</td>
 			<td>{{user?.lastName}}</td>
 			<td>{{user?.userName}}</td>
 		</tr>
-	</tbody>
-</table>
-<essence-ng2-print
-	class="pull-right"
+		</tbody>
+	</table>
+	<table class="table table-striped">
+		<thead *ngIf="showHead">
+		<tr>
+			<th>#</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Username</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr *ngFor="let user of datas; let i = index">
+			<td>{{i}}</td>
+			<td>{{user?.firstName}}</td>
+			<td>{{user?.lastName}}</td>
+			<td>{{user?.userName}}</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+
+<essence-ng2-print #print1
+	[showBtn]="false"
 	[btnClass]="{'btn': true, 'btn-info': true}"
-	[printHTML]="table"
+	[printHTML]="div"
 	[printStyle]="printStyle"
 	[printCSS]="printCSS"
 	(printComplete)="printComplete()">
+</essence-ng2-print>
+<button class="btn btn-danger pull-right" (click)="customPrint()">自定义打印</button>
+
+<essence-ng2-print
+		class="pull-right"
+		[btnText]="'内置打印'"
+		[btnClass]="{'btn': true, 'btn-info': true}"
+		[printHTML]="div"
+		[printStyle]="printStyle"
+		[printCSS]="printCSS"
+		(printComplete)="printComplete()">
 </essence-ng2-print>
