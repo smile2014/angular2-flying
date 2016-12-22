@@ -15,6 +15,7 @@ export class EssenceNg2PrintComponent implements OnInit {
     @Input() printCSS: string[]; // 打印内容css文件
     @Output() printComplete: EventEmitter<any>;
 
+    private oldBtnText: string;
     private printWindow: Window;
     private printDoc: Document;
 
@@ -24,7 +25,7 @@ export class EssenceNg2PrintComponent implements OnInit {
             "print-btn": true,
             "print-btn-success": true
         };
-        this.btnText = '打印';
+        this.oldBtnText = this.btnText = '打印';
         this.printComplete = new EventEmitter<any>(false);
     }
 
@@ -75,21 +76,27 @@ export class EssenceNg2PrintComponent implements OnInit {
             this.printWindow.print();
             window.clearTimeout(timeoutId);
             this.printComplete.emit();
-            this.btnText = '打印';
+            this.btnText = this.oldBtnText;
         }, 500);
     }
 
     private createIframe () {
-        if (document.getElementsByClassName('ng2-print-frame').length > 0) {
-            document.getElementsByClassName('ng2-print-frame')[0].remove();
+        let oldFrame: any = document.getElementsByClassName('ng2-print-frame');
+        if (oldFrame.length > 0) {
+            oldFrame[0].parentNode.removeChild(oldFrame[0]);
         }
         try {
             let printIframe: any = document.createElement('iframe');
             document.body.appendChild(printIframe);
-            printIframe.style = 'position: absolute;border: 0;width: 0;height: 0;right: 0;top: 0;';
-            printIframe.className = 'ng2-print-frame';
+            printIframe.style.position = 'absolute';
+            printIframe.style.border = '0px';
+            printIframe.style.width = '0px';
+            printIframe.style.height = '0px';
+            printIframe.style.right = '0px';
+            printIframe.style.top = '-1000px';
+            printIframe.className = "ng2-print-frame";
             this.printWindow = printIframe.contentWindow;
-            this.printDoc =  this.printWindow.document;
+            this.printDoc = printIframe.contentDocument ? printIframe.contentDocument : ( printIframe.contentWindow ? printIframe.contentWindow.document : printIframe.document);
         }
         catch (e) {
             throw e + ". iframes may not be supported in this browser.";
@@ -99,7 +106,7 @@ export class EssenceNg2PrintComponent implements OnInit {
             throw "Cannot find window.";
         }
 
-        if (!this.printDoc){
+        if (!this.printDoc) {
             throw "Cannot find document.";
         }
     }
@@ -109,6 +116,7 @@ export class EssenceNg2PrintComponent implements OnInit {
     }
 
     print () {
+        this.oldBtnText = this.btnText;
         this.btnText = '准备打印...';
         let timeoutId: number = window.setTimeout(() => {
             window.clearTimeout(timeoutId);
