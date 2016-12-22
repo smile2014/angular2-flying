@@ -97,8 +97,8 @@ printComplete () {
 
 ### 输入属性
 
-- `showBtn`（`?boolean=true`） - 如果为`true`将显示按钮
-- `btnText`（`?string='打印'`） - 按钮显示的文本
+- `showBtn`（`?boolean=true`） - 如果为`true`将显示打印按钮
+- `btnText`（`?string='打印'`） - 打印按钮显示的文本
 - `btnClass`（`?Object={"print-btn": true,"print-btn-success": true};`） - 打印按钮class，传值与`[ngClass]`一样
 - `printHTML`（`string|HTMLElement`） - 打印的内容
 - `printStyle`（`?string`） - 打印内容style。将写进打印页面的style标签中

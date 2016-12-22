@@ -75,6 +75,7 @@ export class EssenceNg2PrintComponent implements OnInit {
             this.printWindow.print();
             window.clearTimeout(timeoutId);
             this.printComplete.emit();
+            this.btnText = '打印';
         }, 500);
     }
 
@@ -108,6 +109,7 @@ export class EssenceNg2PrintComponent implements OnInit {
     }
 
     print () {
+        this.btnText = '准备打印...';
         let timeoutId: number = window.setTimeout(() => {
             window.clearTimeout(timeoutId);
             this.writeDocument();
