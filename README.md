@@ -28,30 +28,34 @@
 
 ## directives
 
-### essence-ng2-editor
+### essence-ng2-editor（富文本编辑器）
 
 - [essence-ng2-editor](./src/app/components/essence-ng2-editor/README.md)
 
 - [UEditor](http://ueditor.baidu.com/website/index.html)
 
-### essence-ng2-fileInput
+### essence-ng2-fileInput（文件上传）
 
 - [essence-ng2-fileInput](./src/app/directives/essence-ng2-fileInput/README.md)
 
 - [Bootstrap-fileinput](http://plugins.krajee.com/file-input#installation)
 
-### essence-ng2-chart
+### essence-ng2-chart（图表）
 
 - [essence-ng2-chart](./src/app/directives/essence-ng2-chart/README.md)
 
 - [HighCharts](http://www.hcharts.cn/)
 
-### essence-ng2-checked
+### essence-ng2-checked（复选框选中状态）
 
 - [essence-ng2-checked](./src/app/directives/essence-ng2-checked/README.md)
 
-### essence-ng2-esrimap
+### essence-ng2-esrimap（esri地图）
 
 - [essence-ng2-esrimap](./src/app/components/essence-ng2-esrimap/README.md)
 
 - [ArcGIS API for JavaScript 3.18](https://developers.arcgis.com/javascript/3/)
+
+### essence-ng2-print（页面打印）
+
+- [essence-ng2-esrimap](./src/app/components/essence-ng2-print/README.md)

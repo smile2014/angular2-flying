@@ -22,7 +22,7 @@ export class EssenceNg2EsriMapService {
         });
     }
 
-    loadEsriModules(modules: any): any {
+    loadEsriModules(modules: string[]): Promise<any> {
         return this.esriLoader.loadModules(modules);
     }
 }

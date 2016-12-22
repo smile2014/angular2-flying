@@ -13,8 +13,6 @@ declare var UE: any;
 })
 export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, OnDestroy {
     ue: any = null;
-    width: any;
-    height: any;
     text: string;
     cd: NgModel;
     renderer: Renderer;
@@ -39,25 +37,6 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
     ajax: any = UE.ajax;
     browser: any = UE.browser;
     utils: Function = UE.utils;
-
-    @Input()
-    set ueWidth (width: any) {
-        this.width = width;
-    }
-
-    get ueWidth (): any {
-        return this.width;
-    }
-
-    @Input()
-    set ueHeight (height: any) {
-        this.height = height;
-        this.setHeight(height);
-    }
-
-    get ueHeight (): any {
-        return this.height;
-    }
 
     @Input()
     set option (config: any) {
@@ -150,8 +129,6 @@ export class EssenceNg2EditorComponent implements ControlValueAccessor, OnInit, 
             console.warn("编辑器容器最好设置id！");
         }
         this.text = this.cd.value;
-        // this.renderer.setElementStyle(this.elementRef.nativeElement, 'width', this.width ? (this.width.toString().indexOf("%") > 0 ? this.width : this.width + "px") : "100%");
-        // this.renderer.setElementStyle(this.elementRef.nativeElement, 'height', this.height ? (this.height.toString().indexOf("%") > 0 ? this.height : this.height + "px") : "100%");
         let con: any = $.extend(true, {}, this.defaultConfig, this.config);
         this.ue = UE.getEditor(this.elementRef.nativeElement.id, con);
 

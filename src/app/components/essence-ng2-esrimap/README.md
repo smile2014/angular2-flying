@@ -76,15 +76,13 @@ ready ($event) {
 
 ## API说明
 
-### 实例的属性与方法
+### 实例属性
 
-#### 属性
+- `map`（`any`） - 当前地图对象
 
-- `map`：当前地图对象
+### 实例方法
 
-#### 方法
-
-- `loadEsriModules`：加载ArcGIS API for JavaScript的模块，如：'esri/map'
+- `loadEsriModules`（`string[]`）return `Promise<any>` - 加载ArcGIS API for JavaScript的模块，如：`['esri/map']`
 
 ### 事件
 

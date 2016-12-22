@@ -69,9 +69,9 @@ export class EssenceNg2EsriMapComponent implements OnInit {
     /**
      * 加载arcgis api for javascript的模块
      * @param modules
-     * @returns {any}
+     * @returns {Promise<any>}
      */
-    loadEsriModules (modules: any): any {
+    loadEsriModules (modules: string[]): Promise<any> {
         return this.esriService.loadEsriModules(modules);
     }
 

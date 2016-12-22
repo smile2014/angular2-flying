@@ -35,8 +35,6 @@ import {EssenceNg2EditorModule} from "../components/essence-ng2-editor";
 ### template中使用
 ```html
 <essence-ng2-editor [(ngModel)]="model_text"
-                    [ueWidth]="e_width"
-                    [ueHeight]="e_height"
                     (contentChange)="contentChange($event)"
                     (ready)="editorReady($event)">
 </essence-ng2-editor>
@@ -44,8 +42,6 @@ import {EssenceNg2EditorModule} from "../components/essence-ng2-editor";
 
 ### 对应的component
 ```typescript
-e_width: number = 1024;
-e_height: number = 500;
 model_text: string = "<p style='color: red;'>ngmodel</p>";
 
 contentChange ($event) {
@@ -59,12 +55,20 @@ editorReady ($event) {
 
 ## API说明
 
-### 属性
+### 输入属性
 
-- `[(ngModel)]`：绑定编辑器内容
-- `ueWidth`：编辑器宽度（纯数字或者百分比，默认'100%'）
-- `ueHeight`：编辑器高度（纯数字或者百分比，默认'100%'）
-- `ueOption`：属性参数（参照官网api）
+- `[(ngModel)]`（`string`） - 绑定编辑器内容
+- `ueOption`（`?Object`） - 属性参数（参照官网api），默认defaultConfig如下：
+```typescript
+    defaultConfig: any = {
+        autoHeightEnabled: true,
+        allowDivTransToP: false,
+        toolbars: [
+            ['fullscreen', 'source', 'undo', 'redo'],
+            ['bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', 'selectall', 'cleardoc']
+        ]
+    };
+```
 
 ### 事件
 
