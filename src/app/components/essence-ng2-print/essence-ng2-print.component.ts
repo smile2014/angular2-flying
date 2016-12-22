@@ -112,7 +112,7 @@ export class EssenceNg2PrintComponent implements OnInit {
             window.clearTimeout(timeoutId);
             this.writeDocument();
             this.startPrint();
-        }, 50);
+        }, 500);
     }
 
 }
