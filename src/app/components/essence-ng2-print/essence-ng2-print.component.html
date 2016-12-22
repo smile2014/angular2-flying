@@ -1,2 +1,1 @@
-<iframe #printElement frameborder="0"></iframe>
-<button [ngClass]="btnClass" (click)="print()">打印</button>
+<button *ngIf="showBtn" [ngClass]="btnClass" (click)="print()">{{btnText}}</button>

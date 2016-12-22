@@ -43,12 +43,14 @@ import {EssenceNg2PrintModule} from "../../components/essence-ng2-print";
 	</tbody>
 </table>
 
-<essence-ng2-print 
-	[btnClass]="{'btn': true, 'btn-info': true}"
-	[printHTML]="table"
-	[printStyle]="printStyle"
-	[printCSS]="printCSS"
-	(printComplete)="printComplete()">
+<essence-ng2-print
+		[showBtn]="true"
+		[btnText]="'内置打印'"
+		[btnClass]="{'btn': true, 'btn-info': true}"
+		[printHTML]="div"
+		[printStyle]="printStyle"
+		[printCSS]="printCSS"
+		(printComplete)="printComplete()">
 </essence-ng2-print>
 ```
 
@@ -93,13 +95,19 @@ printComplete () {
 
 ## API说明
 
-#### 输入属性
+### 输入属性
 
-- `btnClass`：打印按钮class，传值与`[ngClass]`一样
-- `printHTML`：打印的内容。可以是string，也可以是HTMLElement
-- `printStyle`：打印内容style
-- `printCSS`：打印内容css文件
+- `showBtn`（`?boolean=true`） - 如果为`true`将显示按钮
+- `btnText`（`?string='打印'`） - 按钮显示的文本
+- `btnClass`（`?Object={"print-btn": true,"print-btn-success": true};`） - 打印按钮class，传值与`[ngClass]`一样
+- `printHTML`（`string|HTMLElement`） - 打印的内容
+- `printStyle`（`?string`） - 打印内容style。将写进打印页面的style标签中
+- `printCSS`（`?Array<string>`） - 打印内容css文件路径。将在打印页面生成link标签，支持相对路径
+
+### 实例方法
+
+- `print` - 开始打印内容
 
 ### 事件
 
-- `printComplete`：打印完成的事件
+- `printComplete` - 打印完成的事件
