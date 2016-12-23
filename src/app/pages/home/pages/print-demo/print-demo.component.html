@@ -55,22 +55,50 @@
 	</table>
 </div>
 
-<essence-ng2-print #print1
-	[showBtn]="false"
-	[btnClass]="{'btn': true, 'btn-info': true}"
-	[printHTML]="print_div"
-	[printStyle]="printStyle"
-	[printCSS]="printCSS"
-	(printComplete)="printComplete()">
-</essence-ng2-print>
-<button class="btn btn-danger pull-right" (click)="customPrint()">自定义打印</button>
+<div>
+	<essence-ng2-print
+			[btnText]="'iframe模式打印'"
+			[btnClass]="{'btn': true, 'btn-success': true}"
+			[printHTML]="print_div"
+			[printStyle]="printStyle"
+			[printCSS]="printCSS"
+			(printComplete)="printComplete()">
+	</essence-ng2-print>
+</div>
 
-<essence-ng2-print
-		class="pull-right"
-		[btnText]="'内置打印'"
-		[btnClass]="{'btn': true, 'btn-info': true}"
-		[printHTML]="print_div"
-		[printStyle]="printStyle"
-		[printCSS]="printCSS"
-		(printComplete)="printComplete()">
-</essence-ng2-print>
+<div>
+	<essence-ng2-print #print1
+	                   [showBtn]="false"
+	                   [printHTML]="print_div"
+	                   [printStyle]="printStyle"
+	                   [printCSS]="printCSS"
+	                   (printComplete)="printComplete()">
+	</essence-ng2-print>
+	<button class="btn btn-primary" (click)="customPrint('print1')">自定义打印（iframe模式）</button>
+</div>
+
+<div>
+	<essence-ng2-print
+			[mode]="'popup'"
+			[popTitle]="'表格打印'"
+			[btnText]="'popup模式打印'"
+			[btnClass]="{'btn': true, 'btn-warning': true}"
+			[printHTML]="print_div"
+			[printStyle]="printStyle"
+			[printCSS]="printCSS"
+			(printComplete)="printComplete()">
+	</essence-ng2-print>
+</div>
+
+<div>
+	<essence-ng2-print #print2
+	                   [mode]="'popup'"
+	                   [popTitle]="'表格打印'"
+	                   [showBtn]="false"
+	                   [printHTML]="print_div"
+	                   [printStyle]="printStyle"
+	                   [printCSS]="printCSS"
+	                   (printComplete)="printComplete()">
+	</essence-ng2-print>
+	<button class="btn btn-primary" (click)="customPrint('print2')">自定义打印（popup模式）</button>
+</div>

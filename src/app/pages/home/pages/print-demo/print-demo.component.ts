@@ -6,7 +6,8 @@ import {EssenceNg2PrintComponent} from "../../../../components/essence-ng2-print
     styleUrls: ['./print-demo.component.scss']
 })
 export class PrintDemoComponent implements OnInit {
-    @ViewChild('print1') printComponent: EssenceNg2PrintComponent;
+    @ViewChild('print1') printComponent1: EssenceNg2PrintComponent;
+    @ViewChild('print2') printComponent2: EssenceNg2PrintComponent;
 
     printDiv: any;
     showHead: boolean = true;
@@ -61,10 +62,14 @@ export class PrintDemoComponent implements OnInit {
         this.hideTable1 = false;
     }
 
-    customPrint () {
+    customPrint (print: string) {
         this.showHead = false;
         this.hideTable1 = true;
         this.getPrintDiv();
-        this.printComponent.print();
+        if (print === 'print1') {
+            this.printComponent1.print();
+        } else if (print === 'print2') {
+            this.printComponent2.print();
+        }
     }
 }
