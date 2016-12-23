@@ -97,6 +97,9 @@ printComplete () {
 
 ### 输入属性
 
+- `mode`（`?string='iframe'`） - 打印模式。可选的值：`iframe`，`popup`
+- `standard`（`?string='html5'`） - 弹出窗口的网页文档标准，只适用于`mode = 'popup'`。可选的值：`strict`（严格模式），`loose`（兼容模式），`html5`（HTML5）
+- `popTitle`（`?string=''`） - 弹出窗口的标题，只适用于`mode = 'popup'`
 - `showBtn`（`?boolean=true`） - 如果为`true`将显示打印按钮
 - `btnText`（`?string='打印'`） - 打印按钮显示的文本
 - `btnClass`（`?Object={"print-btn": true,"print-btn-success": true};`） - 打印按钮class，传值与`[ngClass]`一样
