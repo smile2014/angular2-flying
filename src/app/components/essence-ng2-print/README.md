@@ -43,24 +43,6 @@ import {EssenceNg2PrintModule} from "../../components/essence-ng2-print";
 		</tr>
 		</tbody>
 	</table>
-	<table class="table table-striped">
-		<thead *ngIf="showHead">
-		<tr>
-			<th>#</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Username</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr *ngFor="let user of datas; let i = index">
-			<td>{{i}}</td>
-			<td>{{user?.firstName}}</td>
-			<td>{{user?.lastName}}</td>
-			<td>{{user?.userName}}</td>
-		</tr>
-		</tbody>
-	</table>
 	<table *ngIf="hideTable1" id="table1" class="table table-striped">
 		<thead>
 		<tr>
@@ -137,7 +119,6 @@ import {EssenceNg2PrintModule} from "../../components/essence-ng2-print";
 	</essence-ng2-print>
 	<button class="btn btn-primary" (click)="customPrint('print2')">自定义打印（popup模式）</button>
 </div>
-
 ```
 
 ### 对应的component
