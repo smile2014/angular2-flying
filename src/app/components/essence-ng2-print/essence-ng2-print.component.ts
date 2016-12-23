@@ -185,24 +185,6 @@ export class EssenceNg2PrintComponent implements OnInit {
     }
 
     /**
-     * 扩展对象（浅度）
-     * @param target 扩展对象
-     * @param source 原始对象
-     * @param isOverride 如果为true，则覆盖相同属性的值
-     * @returns {Object}
-     */
-    private simpleExtend (target: Object, source: Object, isOverride: boolean = true): Object {
-        for (let p in source) {
-            if (source.hasOwnProperty(p)) {
-                if (isOverride || !(p in target)) {
-                    target[p] = source[p];
-                }
-            }
-        }
-        return target;
-    }
-
-    /**
      * 获取打印窗口
      */
     private getPrintWindow () {
