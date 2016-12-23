@@ -95,7 +95,7 @@ export class EssenceNg2PrintComponent implements OnInit {
             printIframe.style.top = '-1000px';
             printIframe.className = "ng2-print-frame";
             this.printWindow = printIframe.contentWindow;
-            this.printDoc = printIframe.contentDocument ? printIframe.contentDocument : ( printIframe.contentWindow ? printIframe.contentWindow.document : printIframe.document);
+            this.printDoc = printIframe.contentDocument ? printIframe.contentDocument : (printIframe.contentWindow ? printIframe.contentWindow.document : printIframe.document);
         }
         catch (e) {
             throw e + ". iframes may not be supported in this browser.";
