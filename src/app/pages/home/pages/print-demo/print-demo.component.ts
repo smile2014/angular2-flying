@@ -1,11 +1,11 @@
-import {Component, OnInit, ViewChild, ElementRef, AfterViewInit, AfterViewChecked} from '@angular/core';
+import {Component, OnInit, ViewChild, ElementRef} from '@angular/core';
 import {EssenceNg2PrintComponent} from "../../../../components/essence-ng2-print";
 
 @Component({
     templateUrl: './print-demo.component.html',
     styleUrls: ['./print-demo.component.scss']
 })
-export class PrintDemoComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class PrintDemoComponent implements OnInit {
     @ViewChild('print1') printComponent: EssenceNg2PrintComponent;
 
     printDiv: any;
@@ -46,9 +46,6 @@ export class PrintDemoComponent implements OnInit, AfterViewInit, AfterViewCheck
     ngOnInit () {
     }
 
-    ngAfterViewInit () {
-    }
-
     getPrintDiv () {
         for (let i: number = 0; i < this.elRef.nativeElement.childNodes.length; i++) {
             let node: any = this.elRef.nativeElement.childNodes[i];
@@ -70,10 +67,4 @@ export class PrintDemoComponent implements OnInit, AfterViewInit, AfterViewCheck
         this.getPrintDiv();
         this.printComponent.print();
     }
-
-    ngAfterViewChecked () {
-        // this.getPrintDiv();
-        console.log(this.printDiv);
-    }
-
 }

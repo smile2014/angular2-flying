@@ -58,4 +58,4 @@
 
 ### essence-ng2-print（页面打印）
 
-- [essence-ng2-esrimap](./src/app/components/essence-ng2-print/README.md)
+- [essence-ng2-print](./src/app/components/essence-ng2-print/README.md)
